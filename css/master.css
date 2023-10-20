@@ -1,9 +1,9 @@
 /* variables here  */
 :root {
-  --main-color: #5ba199; /*#3827c7;*/
-  --hover-color: #469597;
-  --second-color: #e5e3e4; /* gray */
-  --third-color: #f5f5f7; /* light gray */
+  --main-color: #00a2ad; /*#3827c7;*/
+  --hover-color: #014656;
+  --second-color: #e4e4e6; /* gray */
+  --third-color: #f9f7f6; /* light gray #f9f7f6*/
   --text-color: #2e2e2e;
   --transition-time: 0.4s;
   --sec-padding: 100px;
@@ -819,6 +819,7 @@ h6 {
 /* start skills section  */
 .skills {
   padding: var(--sec-padding) 0;
+  background-color: #fff;
 }
 .skills .container {
   display: flex;
@@ -873,9 +874,73 @@ h6 {
   height: 100%;
   background-color: var(--main-color);
 }
-
 /* end skills section  */
 
+/* start how it works section  */
+.work-steps {
+  padding: var(--sec-padding) 0;
+  background-color: var(--second-color);
+}
+.work-steps .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 60px;
+}
+@media (max-width: 991px) {
+  .work-steps .container {
+    flex-direction: column;
+    row-gap: 60px;
+  }
+}
+.work-steps .container img {
+  max-width: 100%;
+}
+.work-steps .steps {
+}
+.work-steps .steps .item {
+  background-color: var(--third-color);
+  display: flex;
+  gap: 25px;
+  padding: 20px;
+  align-items: center;
+  border-radius: 5px;
+  margin-bottom: 25px;
+  border: 2px solid #fff;
+  position: relative;
+  z-index: 1;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+.work-steps .steps .item::before {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  background-color: var(--second-color);
+  z-index: -1;
+  transition: var(--transition-time);
+}
+.work-steps .steps .item:hover::before {
+  width: 100%;
+  height: 100%;
+}
+.work-steps .steps .item img {
+  width: 60px;
+  height: 60px;
+}
+.work-steps .steps .info {
+}
+.work-steps .steps .info h3 {
+}
+.work-steps .steps .info p {
+  line-height: 1.6;
+  padding: 10px 0;
+}
+/* end how it works section  */
 /* start animation */
 @keyframes up-down {
   0%,

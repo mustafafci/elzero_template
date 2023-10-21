@@ -912,6 +912,12 @@ h6 {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
     rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
+@media (max-width: 767px) {
+  .work-steps .steps .item {
+    flex-direction: column;
+    text-align: center;
+  }
+}
 .work-steps .steps .item::before {
   position: absolute;
   content: "";
@@ -931,10 +937,6 @@ h6 {
 .work-steps .steps .item img {
   width: 60px;
   height: 60px;
-}
-.work-steps .steps .info {
-}
-.work-steps .steps .info h3 {
 }
 .work-steps .steps .info p {
   line-height: 1.6;

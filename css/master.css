@@ -943,6 +943,9 @@ h6 {
   padding: 10px 0;
 }
 /* end how it works section  */
+
+/* start events section  */
+
 .events {
   padding: var(--sec-padding) 0;
 }
@@ -1040,8 +1043,138 @@ h6 {
   border-radius: 30px;
   cursor: pointer;
 }
-/* start events section  */
 /* end events section  */
+
+/* start pricing plans section  */
+.pricing-plans {
+  padding: var(--sec-padding) 0;
+  background-color: var(--second-color);
+}
+.pricing-plans .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+.pricing-plans .plan.advanced {
+  position: relative;
+}
+@media (min-width: 1200px) {
+  .pricing-plans .plan.advanced {
+    transform: translateY(-25px);
+  }
+}
+.pricing-plans .plan.advanced .popular {
+  position: absolute;
+  content: "Most Popular";
+  top: 0;
+  right: 20px;
+  background-color: var(--main-color);
+  color: #fff;
+  writing-mode: vertical-rl;
+  padding: 15px 10px 35px;
+  font-weight: bold;
+}
+.pricing-plans .plan.advanced .popular::before {
+  position: absolute;
+  content: "";
+  border-style: solid;
+  border-width: 19px;
+  bottom: 0;
+  right: 0px;
+  border-color: transparent transparent #fff transparent;
+}
+.pricing-plans .plan {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  position: relative;
+  z-index: 1;
+}
+.pricing-plans .plan::before,
+.pricing-plans .plan::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 50%;
+  background-color: var(--third-color);
+  z-index: -1;
+  transition: var(--transition-time);
+}
+
+.pricing-plans .plan::before {
+  left: 0;
+  top: 0;
+}
+.pricing-plans .plan::after {
+  right: 0;
+  bottom: 0;
+}
+.pricing-plans .plan:hover::before,
+.pricing-plans .plan:hover::after {
+  width: 100%;
+}
+.pricing-plans .plan .head {
+  text-align: center;
+}
+.pricing-plans .plan .head h3 {
+  font-size: 1.5rem;
+  margin: 20px 0 30px;
+}
+.pricing-plans .plan .head img {
+  width: 80px;
+}
+.pricing-plans .plan .head .price {
+  margin: 20px 0;
+}
+.pricing-plans .plan .head .price h4 {
+  color: var(--main-color);
+  font-size: 4rem;
+}
+.pricing-plans .plan .head .price span {
+  font-size: 0.8rem;
+  color: var(--text-color);
+  font-weight: bold;
+  opacity: 0.8;
+}
+.pricing-plans .plan .info {
+  margin: 20px 0 30px;
+  list-style-type: none;
+}
+.pricing-plans .plan .info li {
+  padding: 20px;
+  border-top: 1px solid var(--second-color);
+  position: relative;
+  padding-left: 20px;
+}
+.pricing-plans .plan .info li::before {
+  position: absolute;
+  font: var(--fa-font-solid);
+  content: "\f00c";
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--main-color);
+}
+.pricing-plans .plan .choose-plan {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  border: 2px solid var(--main-color);
+  padding: 10px 15px;
+  border-radius: 6px;
+  color: var(--main-color);
+  font-weight: bold;
+  margin-bottom: 30px;
+  transition: var(--transition-time);
+}
+.pricing-plans .plan .choose-plan:hover {
+  background-color: var(--main-color);
+  color: #fff;
+  border-color: var(--main-color);
+}
+/* end pricing plans section  */
 
 /* start animation */
 @keyframes up-down {

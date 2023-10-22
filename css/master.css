@@ -1316,6 +1316,198 @@ h6 {
 }
 /* end our statistics section */
 
+/* start discount section  */
+.discount {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.discount .discount-poster {
+  text-align: center;
+  flex-basis: 100%;
+  position: relative;
+  color: #fff;
+  background-color: rgba(0 162 173 / 69%);
+}
+@media (min-width: 992px) {
+  .discount .discount-poster {
+    flex-basis: 55%;
+  }
+}
+.discount .discount-poster::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/discount.jpg");
+  background-size: cover;
+  /* animation: change-background 10s linear infinite; */
+  filter: grayscale(1);
+  z-index: -1;
+}
+
+.discount .content h2 {
+  font-size: 2.5rem;
+  margin: 30px 0;
+}
+.discount .content p {
+  line-height: 1.8;
+  font-size: 1.3rem;
+}
+.discount .discount-poster .content {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.discount .discount-poster .content img {
+  max-width: 100%;
+}
+.discount .request-discount {
+  flex-basis: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+@media (min-width: 992px) {
+  .discount .request-discount {
+    flex-basis: 45%;
+  }
+}
+.discount .request-discount .content {
+  padding: 0 20px;
+}
+.request-discount .content > form {
+  margin-top: 40px;
+}
+.request-discount .content form input,
+.request-discount .content form textarea {
+  display: block;
+  width: 100%;
+  padding: 15px 20px;
+  background-color: var(--second-color);
+  border: none;
+  border-bottom: 1px solid var(--main-color);
+  margin-bottom: 30px;
+  caret-color: var(--main-color);
+  border-radius: 5px;
+}
+.request-discount .content form input:focus,
+.request-discount .content form textarea:focus {
+  outline: none;
+}
+.request-discount .content form textarea {
+  resize: none;
+  height: 200px;
+}
+.request-discount .content form input[type="submit"] {
+  background-color: var(--main-color);
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.3rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: var(--transition-time);
+}
+.request-discount .content form input[type="submit"]:hover {
+  background-color: var(--hover-color);
+}
+/* end discount section  */
+
+/* footer */
+.footer {
+  background-color: var(--text-color);
+  color: #fff;
+  padding-top: 60px;
+}
+.footer .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.footer .info h3 {
+  font-size: 2.5rem;
+}
+.footer .info .info-links {
+  margin: 20px 0;
+}
+
+.footer .info .info-links i {
+  background-color: var(--second-color);
+  font-size: 1.2rem;
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 4px;
+  transition: var(--transition-time);
+}
+.footer .info .info-links i:hover {
+  background-color: var(--main-color);
+  color: #fff;
+}
+.footer .info p {
+  line-height: 1.7;
+  font-size: 1.2rem;
+}
+.footer .link {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.footer .links li {
+  padding: 15px 0;
+}
+.footer .links li:not(:last-child) {
+  border-bottom: 1px solid var(--third-color);
+}
+.footer .links i {
+  margin-right: 10px;
+  color: var(--main-color);
+}
+.footer .links a {
+  color: #fff;
+  transition: var(--transition-time);
+}
+.footer .links li a:hover {
+  margin-left: 10px;
+}
+
+.footer .address ul {
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+}
+.footer .address li {
+  display: flex;
+  align-items: center;
+  column-gap: 15px;
+  line-height: 1.7;
+}
+.footer .address li i {
+  font-size: 1.4rem;
+  color: var(--main-color);
+}
+.footer .footer-gallery {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.footer .footer-gallery img {
+  width: 78px;
+  border: 3px solid #fff;
+}
+.footer > p {
+  background-color: #111;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+  font-size: 1.2rem;
+}
+/* end footer */
+
 /* start animation */
 @keyframes up-down {
   0%,
@@ -1386,6 +1578,16 @@ h6 {
     opacity: 0;
     width: 200%;
     height: 200%;
+  }
+}
+
+@keyframes change-background {
+  0%,
+  100% {
+    background-image: url("../images/discount.jpg");
+  }
+  50% {
+    background-image: url("../images/discount-background2.jpg");
   }
 }
 /* end animation */

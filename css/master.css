@@ -1,12 +1,15 @@
 /* variables here  */
 :root {
-  --main-color: #00a2ad; /*#3827c7;*/
+  --main-color: #00a2ad;
   --hover-color: #014656;
   --second-color: #e4e4e6; /* gray */
-  --third-color: #f9f7f6; /* light gray #f9f7f6*/
+  --third-color: #f9f7f6;
   --text-color: #2e2e2e;
   --transition-time: 0.4s;
   --sec-padding: 100px;
+  --line-height: 1.8;
+  --box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
 /* end variables   */
 /* main rules  */
@@ -111,6 +114,9 @@ h6 {
   color: #fff;
   border-color: #fff;
   transition-delay: 0.5s;
+}
+main > section:nth-of-type(even) {
+  background-color: var(--second-color);
 }
 /* end component */
 
@@ -305,7 +311,7 @@ h6 {
 }
 .landing-page .text p {
   font-size: 1.3rem;
-  line-height: 1.8;
+  line-height: var(--line-height);
   color: var(--text-color);
 }
 .landing-page .landing-image img {
@@ -342,8 +348,7 @@ h6 {
 
 /* start articles section  */
 .articles {
-  padding-top: var(--sec-padding);
-  padding-bottom: var(--sec-padding);
+  padding: var(--sec-padding) 0;
 }
 .articles .content {
   display: grid;
@@ -376,7 +381,7 @@ h6 {
   color: var(--text-color);
 }
 .articles .content .article .info p {
-  line-height: 1.8;
+  line-height: var(--line-height);
   color: var(--text-color);
 }
 .articles .content .article .link {
@@ -393,9 +398,7 @@ h6 {
 
 /* start gallery section  */
 .gallery {
-  padding-top: var(--sec-padding);
-  padding-bottom: var(--sec-padding);
-  background-color: var(--second-color);
+  padding: var(--sec-padding) 0;
 }
 
 .gallery .gallery-container {
@@ -407,8 +410,7 @@ h6 {
   background-color: #fff;
   padding: 20px;
   position: relative;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
-    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  box-shadow: var(--box-shadow);
 }
 .gallery .item .img {
   position: relative;
@@ -443,8 +445,7 @@ h6 {
 
 /* start features section */
 .features {
-  padding-top: var(--sec-padding);
-  padding-bottom: var(--sec-padding);
+  padding: var(--sec-padding) 0;
   background-color: #fff;
 }
 
@@ -458,8 +459,7 @@ h6 {
   overflow: hidden;
   padding: 20px;
   text-align: center;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
-    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  box-shadow: var(--box-shadow);
 }
 .features .feat .img {
   position: relative;
@@ -510,7 +510,7 @@ h6 {
 
 .features .feat p {
   color: var(--text-color);
-  line-height: 1.8;
+  line-height: var(--line-height);
   font-size: 1.1rem;
   padding: 5px 0;
 }
@@ -591,9 +591,7 @@ h6 {
 
 /* start testimonials section */
 .testimonials {
-  padding-top: var(--sec-padding);
-  padding-bottom: var(--sec-padding);
-  background-color: var(--second-color);
+  padding: var(--sec-padding) 0;
 }
 .testimonials .container {
   display: grid;
@@ -606,8 +604,7 @@ h6 {
   border-radius: 8px;
   position: relative;
   transition: var(--transition-time);
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
-    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  box-shadow: var(--box-shadow);
 }
 .testimonials .card:hover {
   transform: translateY(-10px);
@@ -634,14 +631,13 @@ h6 {
 .testimonials .card p {
   margin: 15px 0;
   color: var(--text-color);
-  line-height: 1.8;
+  line-height: var(--line-height);
 }
 /* end testimonials section */
 
 /* team members */
 .team {
-  padding-top: var(--sec-padding);
-  padding-bottom: var(--sec-padding);
+  padding: var(--sec-padding) 0;
   position: relative;
   background-color: #fff;
 }
@@ -732,9 +728,7 @@ h6 {
 
 /* start services section  */
 .services {
-  padding-top: var(--sec-padding);
-  padding-bottom: var(--sec-padding);
-  background-color: var(--second-color);
+  padding: var(--sec-padding) 0;
 }
 .services .container {
   display: grid;
@@ -743,8 +737,7 @@ h6 {
 }
 .services .item {
   background-color: #fff;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
-    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  box-shadow: var(--box-shadow);
   counter-increment: item-num;
   transition: var(--transition-time);
   position: relative;
@@ -879,7 +872,6 @@ h6 {
 /* start how it works section  */
 .work-steps {
   padding: var(--sec-padding) 0;
-  background-color: var(--second-color);
 }
 .work-steps .container {
   display: flex;
@@ -896,8 +888,6 @@ h6 {
 .work-steps .container img {
   max-width: 100%;
 }
-.work-steps .steps {
-}
 .work-steps .steps .item {
   background-color: var(--third-color);
   display: flex;
@@ -909,8 +899,7 @@ h6 {
   border: 2px solid #fff;
   position: relative;
   z-index: 1;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
-    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  box-shadow: var(--box-shadow);
 }
 @media (max-width: 767px) {
   .work-steps .steps .item {
@@ -939,7 +928,7 @@ h6 {
   height: 60px;
 }
 .work-steps .steps .info p {
-  line-height: 1.6;
+  line-height: var(--line-height);
   padding: 10px 0;
 }
 /* end how it works section  */
@@ -1004,7 +993,7 @@ h6 {
   font-size: 2rem;
 }
 .events .latest-event p {
-  line-height: 1.8;
+  line-height: var(--line-height);
   margin: 12px;
   font-size: 1.2rem;
   color: var(--text-color);
@@ -1048,7 +1037,6 @@ h6 {
 /* start pricing plans section  */
 .pricing-plans {
   padding: var(--sec-padding) 0;
-  background-color: var(--second-color);
 }
 .pricing-plans .container {
   display: grid;
@@ -1087,8 +1075,7 @@ h6 {
   background-color: #fff;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
-    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  box-shadow: var(--box-shadow);
   position: relative;
   z-index: 1;
 }
@@ -1248,7 +1235,6 @@ h6 {
 /* start our statistics section */
 .stats {
   padding: var(--sec-padding) 0;
-  background-color: var(--second-color);
   background-image: url("../images/stats.jpg");
   background-size: cover;
   position: relative;
@@ -1278,8 +1264,7 @@ h6 {
   padding: 20px;
   text-align: center;
   border-radius: 8px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
-    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  box-shadow: var(--box-shadow);
   position: relative;
 }
 .stats .box::before,
@@ -1353,7 +1338,7 @@ h6 {
   margin: 30px 0;
 }
 .discount .content p {
-  line-height: 1.8;
+  line-height: var(--line-height);
   font-size: 1.3rem;
 }
 .discount .discount-poster .content {
@@ -1447,7 +1432,7 @@ h6 {
   color: #fff;
 }
 .footer .info p {
-  line-height: 1.7;
+  line-height: var(--line-height);
   font-size: 1.2rem;
 }
 .footer .link {
@@ -1482,7 +1467,7 @@ h6 {
   display: flex;
   align-items: center;
   column-gap: 15px;
-  line-height: 1.7;
+  line-height: var(--line-height);
 }
 .footer .address li i {
   font-size: 1.4rem;

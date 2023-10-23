@@ -21,6 +21,19 @@
 html {
   scroll-behavior: smooth;
 }
+::-webkit-scrollbar {
+  width: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--third-color);
+  box-shadow: 2px 4px 2px var(--second-color) inset;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--main-color);
+  border-radius: 10px;
+  height: 80px;
+}
 body {
   font-family: "Cairo", sans-serif;
   background-color: var(--third-color);
@@ -131,6 +144,26 @@ main > section:nth-of-type(even) {
   background-image: linear-gradient(135deg, #fff 25%, transparent 25%),
     linear-gradient(225deg, #fff 25%, transparent 25%);
   background-size: 30px 40px;
+}
+.dots {
+  position: absolute;
+  background-image: url(../images/dots.png);
+  background-repeat: no-repeat;
+  width: 187px;
+  height: 168px;
+}
+.top-right {
+  top: 0;
+  right: 0;
+}
+.bottom-left {
+  bottom: 0;
+  left: 0;
+}
+@media (max-width: 991px) {
+  .dots {
+    display: none;
+  }
 }
 /* end component */
 
@@ -413,6 +446,7 @@ main > section:nth-of-type(even) {
 /* start gallery section  */
 .gallery {
   padding: var(--sec-padding) 0;
+  position: relative;
 }
 
 .gallery .gallery-container {
@@ -743,6 +777,7 @@ main > section:nth-of-type(even) {
 /* start services section  */
 .services {
   padding: var(--sec-padding) 0;
+  position: relative;
 }
 .services .container {
   display: grid;
@@ -1051,6 +1086,7 @@ main > section:nth-of-type(even) {
 /* start pricing plans section  */
 .pricing-plans {
   padding: var(--sec-padding) 0;
+  position: relative;
 }
 .pricing-plans .container {
   display: grid;

@@ -1,6 +1,7 @@
 // toggle mega menu in the header
 const megaMenu = document.querySelector("#header .mega-menu");
-document.getElementById("show-mega-menu").addEventListener("click", () => {
+document.getElementById("show-mega-menu").addEventListener("click", (e) => {
+  e.preventDefault();
   megaMenu.classList.toggle("show-mega-menu");
 
   const links = document.querySelectorAll(".mega-menu .links a");

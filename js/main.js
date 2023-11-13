@@ -30,27 +30,27 @@ window.addEventListener("scroll", () => {
 const stats = document.getElementById("stats");
 const statsMemebers = document.querySelectorAll("#stats .box h3");
 
-window.addEventListener("scroll", () => {
-  if (window.scrollY > stats.offsetTop) {
-    const interval = 4000;
-    let started = false;
-    if (!started) {
-      started = true;
-      statsMemebers.forEach((stat) => {
-        let startValue = 0;
-        const endValue = stat.dataset.stats;
-        const duration = interval / endValue;
-        const counter = setInterval(() => {
-          startValue++;
-          stat.innerText = startValue;
-          if (endValue == startValue) {
-            clearInterval(counter);
-          }
-        }, duration);
-      });
-    }
-  }
-});
+// window.addEventListener("scroll", () => {
+//   if (window.scrollY > stats.offsetTop) {
+//     const interval = 4000;
+//     let started = false;
+//     if (!started) {
+//       started = true;
+//       statsMemebers.forEach((stat) => {
+//         let startValue = 0;
+//         const endValue = stat.dataset.stats;
+//         const duration = interval / endValue;
+//         const counter = setInterval(() => {
+//           startValue++;
+//           stat.innerText = startValue;
+//           if (endValue == startValue) {
+//             clearInterval(counter);
+//           }
+//         }, duration);
+//       });
+//     }
+//   }
+// });
 // window.addEventListener("scroll", () => {
 //   if (window.scrollY >= stats.offsetTop) {
 //     statsMemebers.forEach((stat) => {
@@ -102,7 +102,7 @@ const timeDown = setInterval(() => {
 const backToTop = document.querySelector(".back-to-top");
 
 window.addEventListener("scroll", () => {
-  this.scrollY > 700
+  window.scrollY > 700
     ? backToTop.classList.add("show")
     : backToTop.classList.remove("show");
 });
@@ -112,4 +112,23 @@ backToTop.addEventListener("click", () => {
     top: 0,
     behavior: "smooth",
   });
+});
+
+import { CountUp } from "./countUp.min.js";
+
+// console.log(CountUp);
+// let demo = new CountUp('myTargetElement', 7762);
+// if (!demo.error) {
+//   demo.start();
+// } else {
+//   console.error(demo.error);
+// }
+
+statsMemebers.forEach((el) => {
+  let demo = new CountUp(el, el.dataset.stats, { enableScrollSpy: true });
+  if (!demo.error) {
+    demo.start();
+  } else {
+    console.error(demo.error);
+  }
 });

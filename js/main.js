@@ -25,50 +25,6 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// statistics count up number
-
-const stats = document.getElementById("stats");
-const statsMemebers = document.querySelectorAll("#stats .box h3");
-
-// window.addEventListener("scroll", () => {
-//   if (window.scrollY > stats.offsetTop) {
-//     const interval = 4000;
-//     let started = false;
-//     if (!started) {
-//       started = true;
-//       statsMemebers.forEach((stat) => {
-//         let startValue = 0;
-//         const endValue = stat.dataset.stats;
-//         const duration = interval / endValue;
-//         const counter = setInterval(() => {
-//           startValue++;
-//           stat.innerText = startValue;
-//           if (endValue == startValue) {
-//             clearInterval(counter);
-//           }
-//         }, duration);
-//       });
-//     }
-//   }
-// });
-// window.addEventListener("scroll", () => {
-//   if (window.scrollY >= stats.offsetTop) {
-//     statsMemebers.forEach((stat) => {
-//       var counter = 0;
-//       function countUp() {
-//         counter++;
-//         stat.textContent = counter;
-
-//         if (counter < stat.dataset.stats) {
-//           requestAnimationFrame(countUp);
-//         }
-//       }
-//       window.requestAnimationFrame(countUp);
-//     });
-//   }
-// });
-
-// get latest section
 const latestDate = new Date("2024 3 30").getTime();
 
 const timeDown = setInterval(() => {
@@ -108,21 +64,18 @@ window.addEventListener("scroll", () => {
 });
 
 backToTop.addEventListener("click", () => {
-  this.scrollTo({
+  window.scrollTo({
     top: 0,
     behavior: "smooth",
   });
 });
 
-import { CountUp } from "./countUp.min.js";
+// statistics count up number
 
-// console.log(CountUp);
-// let demo = new CountUp('myTargetElement', 7762);
-// if (!demo.error) {
-//   demo.start();
-// } else {
-//   console.error(demo.error);
-// }
+const stats = document.getElementById("stats");
+const statsMemebers = document.querySelectorAll("#stats .box h3");
+
+import { CountUp } from "./countUp.min.js";
 
 statsMemebers.forEach((el) => {
   let demo = new CountUp(el, el.dataset.stats, { enableScrollSpy: true });

@@ -1,8 +1,9 @@
 /* variables here  */
 :root {
-  --main-color: #00a2ad;
+  --main-color: #009fbd;
+  /* --main-color: #00a2ad; */
   --hover-color: #014656;
-  --second-color: #e4e4e6; /* gray */
+  --second-color: #e0f4ffb7;
   --third-color: #f9f7f6;
   --text-color: #2e2e2e;
   --transition-time: 0.4s;
